@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-<script>
+  <link rel="stylesheet" href="stylest.css" />
+  <script>
     const path = window.location.pathname;
     const fileName = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
     const studentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
     document.addEventListener("DOMContentLoaded", () => {
-        document.title = `Quotes from ${studentName}`;
+      document.title = `Quotes from ${studentName}`;
+      document.getElementById("student-name").textContent = studentName;
     });
-</script>
+  </script>
   <style>
     body { font-family: Arial, sans-serif; margin: 2rem; }
     h1 { color: #333; }
@@ -19,14 +21,12 @@
   </style>
 </head>
 <body>
-<h1>Quotes by <span id="student-name"></span></h1>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("student-name").textContent = studentName;
-    });
-</script>
+  <h1>Quotes by <span id="student-name"></span></h1>
+  <div>
+    <p>This is a styled div element.</p>
+  </div>
   <blockquote>"The only limit to our realization of tomorrow is our doubts of today." – Franklin D. Roosevelt</blockquote>
   <blockquote>"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</blockquote>
-  <p><a href="../index.html">Back to Students List</a></p>
+  <button type="button" onclick="window.location.href='../index.html'">Back to Students List</button>
 </body>
 </html>
