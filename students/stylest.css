@@ -1,11 +1,12 @@
-.div{
-    background-color: rosybrown;
-    font: 40px Gothic;;
-    font-weight: normal;
-    text-align: center;
-    padding: 10px;
-    border: 2px solid black;
-    margin: 20px;
+.div {
+  background-color: rosybrown;
+  font: 40px Gothic;
+  ;
+  font-weight: normal;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 20px;
 }
 
 .parallax {
@@ -23,49 +24,52 @@
 }
 
 body {
-    background-color: rgb(223, 208, 208);
-    font-family: Arial, sans-serif;
-    margin: 20px;
+  background-color: rgb(223, 208, 208);
+  font-family: Arial, sans-serif;
+  margin: 20px;
 }
 
 h1 {
-    color: darkblue;
-    text-align: center;
+  color: darkblue;
+  text-align: center;
 }
 
 blockquote {
-    font-style: italic;
-    color: darkgreen;
-    margin: 20px;
-    padding: 10px;
-    border-left: 5px solid gray;
+  font-style: italic;
+  color: darkgreen;
+  margin: 20px;
+  padding: 10px;
+  border-left: 5px solid gray;
 }
 
-  .chenar-multiselect {
-    width: 300px;
-    padding: 1rem;
-    border: 2px solid #007ACC;
-    border-radius: 8px;
-    background: #f9f9f9;
-    margin: 2rem 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  }
-  .chenar-multiselect label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  .chenar-multiselect select {
-    width: 100%;
-    min-height: 120px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0.5rem;
-    font-size: 1rem;
-    background: #fff;
-    color: #333;
-  }
-  .chenar-multiselect option {
-    padding: 0.3rem;
-  }
+.chenar-multiselect {
+  width: 300px;
+  padding: 1rem;
+  border: 2px solid #007ACC;
+  border-radius: 8px;
+  background: #f9f9f9;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.chenar-multiselect label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.chenar-multiselect select {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+}
+
+.chenar-multiselect option {
+  padding: 0.3rem;
+}
