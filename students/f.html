@@ -1,32 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-<script>
+  <script>
     const path = window.location.pathname;
     const fileName = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
     const studentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
     document.addEventListener("DOMContentLoaded", () => {
-        document.title = `Quotes from ${studentName}`;
+      document.title = `Quotes from ${studentName}`;
     });
-</script>
+  </script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    h1 { color: #333; }
-    blockquote { font-style: italic; color: #555; border-left: 4px solid #ccc; padding-left: 1em; }
-    a { color: #007ACC; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #ccc;
+      padding-left: 1em;
+    }
+
+    a {
+      color: #007ACC;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
+
 <body>
-<h1>Quotes by <span id="student-name"></span></h1>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("student-name").textContent = studentName;
-    });
-</script>
-  <blockquote>"The only limit to our realization of tomorrow is our doubts of today." – Franklin D. Roosevelt</blockquote>
-  <blockquote>"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</blockquote>
-  <p><a href="../index.html">Back to Students List</a></p>
+  <div class="producer-bg">
+    <h1 class="producer-title">FL Studio: Beginner Tips for Using Autotune Plugins</h1>
+    <div class="producer-content">
+      <h2>How to Use Autotune Plugins for Voice</h2>
+      <ol>
+        <li>
+          <strong>Record Your Vocal Track</strong><br>
+          Open the Mixer, select an empty track, and record your voice.<br>
+          <img src="https://www.image-line.com/fl-studio-learning/fl-studio-online-manual/html/img_mixer_track.png"
+            alt="FL Studio Mixer" class="step-img">
+        </li>
+        <li>
+          <strong>Add an Autotune Plugin</strong><br>
+          Click on a slot in the Mixer’s effect rack and choose an autotune plugin (e.g., Pitcher, NewTone, or
+          third-party plugins like Antares Auto-Tune).<br>
+          <img src="https://www.image-line.com/fl-studio-learning/fl-studio-online-manual/html/img_plugin_picker.png"
+            alt="Plugin Picker" class="step-img">
+        </li>
+        <li>
+          <strong>Set the Key and Scale</strong><br>
+          In the plugin window, set the key and scale to match your song for best results.<br>
+          <img src="https://www.image-line.com/fl-studio-learning/fl-studio-online-manual/html/img_pitcher.png"
+            alt="Pitcher Plugin" class="step-img">
+        </li>
+        <li>
+          <strong>Adjust Retune Speed</strong><br>
+          Use the retune or correction speed knob to control how strong the autotune effect is. Faster speeds sound more
+          robotic.<br>
+        </li>
+        <li>
+          <strong>Fine-Tune and Export</strong><br>
+          Play back your track, tweak settings as needed, and export your finished vocal.<br>
+        </li>
+      </ol>
+      <p>Tip: Experiment with different plugins and settings to find the sound you like!</p>
+      <h3>Recommended Video Tutorial</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/rbAcSizXnM0?si=GyyN0xYs9_Efsbnt"
+        title="How To Use Autotune In FL Studio (Pitcher & NewTone Tutorial)" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        class="yt-video"></iframe>
+    </div>
+    <p><a href="../index.html" class="back-link">Back to Students List</a></p>
+  </div>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      font-family: 'Montserrat', Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .producer-bg {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      margin: 2rem auto;
+      max-width: 900px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      padding: 2rem 3rem;
+      animation: fadeIn 1.2s cubic-bezier(.42, 0, .58, 1);
+    }
+
+    .producer-title {
+      font-family: 'Orbitron', Arial, sans-serif;
+      color: #fff;
+      text-shadow: 0 2px 8px #0008;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      animation: slideDown 1s;
+    }
+
+    .producer-content h2 {
+      color: #ff9800;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1.2s;
+    }
+
+    .producer-content ol {
+      color: #fff;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      counter-reset: step;
+    }
+
+    .producer-content ol li {
+      margin-bottom: 1.5em;
+      position: relative;
+      padding-left: 2.2em;
+      animation: fadeInUp 1.2s;
+    }
+
+    .producer-content ol li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0.2em;
+      background: #ff9800;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 1.5em;
+      height: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Orbitron', Arial, sans-serif;
+      box-shadow: 0 2px 8px #ff980088;
+    }
+
+    .step-img {
+      max-width: 320px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px #0004;
+      margin: 1em 0;
+      transition: transform 0.3s;
+    }
+
+    .step-img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    .yt-video {
+      border-radius: 12px;
+      box-shadow: 0 4px 24px #0006;
+      margin: 1em 0;
+      width: 100%;
+      max-width: 560px;
+      display: block;
+      animation: fadeIn 1.5s;
+    }
+
+    .back-link {
+      color: #ff9800;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #fff;
+      text-shadow: 0 2px 8px #ff980088;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-60px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll animation */
+    .producer-content ol li {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+
+    .producer-content ol li.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <script>
+    // Animate steps on scroll
+    function revealSteps() {
+      const steps = document.querySelectorAll('.producer-content ol li');
+      const trigger = window.innerHeight * 0.95;
+      steps.forEach(step => {
+        const rect = step.getBoundingClientRect();
+        if (rect.top < trigger) {
+          step.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSteps);
+    window.addEventListener('DOMContentLoaded', revealSteps);
+  </script>
+
 </body>
+
 </html>
