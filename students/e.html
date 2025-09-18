@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-<script>
+  <script>
     const path = window.location.pathname;
     const fileName = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
-    const studentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
+    window.studentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
     document.addEventListener("DOMContentLoaded", () => {
-        document.title = `Quotes from ${studentName}`;
+      document.title = `Quotes from ${window.studentName}`;
     });
-</script>
+  </script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    h1 { color: #333; }
-    blockquote { font-style: italic; color: #555; border-left: 4px solid #ccc; padding-left: 1em; }
-    a { color: #007ACC; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #ccc;
+      padding-left: 1em;
+    }
+
+    a {
+      color: #007ACC;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
+
 <body>
-<h1>Quotes by <span id="student-name"></span></h1>
-<script>
+  <h1>Quotes by <span id="student-name"></span></h1>
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("student-name").textContent = studentName;
+      document.getElementById("student-name").textContent = window.studentName;
     });
-</script>
-  <blockquote>"The only limit to our realization of tomorrow is our doubts of today." – Franklin D. Roosevelt</blockquote>
-  <blockquote>"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</blockquote>
+  </script>
+  <img src="https://starwars-visualguide.com/assets/img/characters/11.jpg" alt="Anakin Skywalker"
+    style="display:block;max-width:300px;width:100%;margin:1em auto;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.2);" />
+  <h2>anakin the goat</h2>
+  <blockquote>"If you're not with me, then you're my enemy!" – Anakin Skywalker</blockquote>
+  <blockquote>"You were the Chosen One! It was said that you would destroy the Sith, not join them!" – Obi-Wan Kenobi
+  </blockquote>
   <p><a href="../index.html">Back to Students List</a></p>
 </body>
+
 </html>
