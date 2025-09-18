@@ -1,71 +1,164 @@
-.div{
-    background-color: rosybrown;
-    font: 40px Gothic;;
-    font-weight: normal;
-    text-align: center;
-    padding: 10px;
-    border: 2px solid black;
-    margin: 20px;
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  background: #f4f6f8;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.7;
+}
+
+/* Header */
+h1 {
+  color: #22223b;
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* Main content container */
+.main-content {
+  max-width: 700px;
+  background: #fff;
+  margin: 2rem auto 3rem auto;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem;
+}
+
+/* Styled div */
+.styled-div, .div {
+  background: linear-gradient(90deg, #f7cac9 0%, #92a8d1 100%);
+  color: #22223b;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Blockquotes */
+blockquote {
+  font-style: italic;
+  color: #4a4e69;
+  background: #f8f9fa;
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  border-left: 5px solid #007ACC;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+/* Parallax section */
 .parallax {
-  /* The image used */
   background-image: url("img_parallax.jpg");
-
-  /* Set a specific height */
-  min-height: 500px;
-
-  /* Create the parallax scrolling effect */
+  min-height: 350px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 18px;
+  margin: 2.5rem 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
 }
 
-body {
-    background-color: rgb(223, 208, 208);
-    font-family: Arial, sans-serif;
-    margin: 20px;
+/* Multiple selection chenar */
+.chenar-multiselect {
+  width: 100%;
+  max-width: 400px;
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  border: 2px solid #007ACC;
+  border-radius: 12px;
+  background: #f9f9fb;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
-h1 {
-    color: darkblue;
-    text-align: center;
+.chenar-multiselect label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.7rem;
+  color: #22223b;
+  font-size: 1.1rem;
 }
 
-blockquote {
-    font-style: italic;
-    color: darkgreen;
-    margin: 20px;
-    padding: 10px;
-    border-left: 5px solid gray;
+.chenar-multiselect select {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #bfc9d1;
+  border-radius: 6px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  background: #fff;
+  color: #22223b;
+  transition: border 0.2s;
+  outline: none;
 }
 
+.chenar-multiselect select:focus {
+  border: 1.5px solid #007ACC;
+  background: #f0f8ff;
+}
+
+.chenar-multiselect option {
+  padding: 0.4rem;
+}
+
+/* Button */
+button, .btn {
+  display: block;
+  margin: 2.5rem auto 0 auto;
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(90deg, #007ACC 0%, #4a90e2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover, .btn:hover {
+  background: linear-gradient(90deg, #005fa3 0%, #357ab8 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Links */
+a {
+  color: #007ACC;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #005fa3;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .main-content {
+    padding: 1.2rem 0.5rem;
+  }
   .chenar-multiselect {
-    width: 300px;
     padding: 1rem;
-    border: 2px solid #007ACC;
-    border-radius: 8px;
-    background: #f9f9f9;
-    margin: 2rem 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   }
-  .chenar-multiselect label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #333;
+  .parallax {
+    min-height: 200px;
   }
-  .chenar-multiselect select {
-    width: 100%;
-    min-height: 120px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0.5rem;
-    font-size: 1rem;
-    background: #fff;
-    color: #333;
-  }
-  .chenar-multiselect option {
-    padding: 0.3rem;
-  }
+}
