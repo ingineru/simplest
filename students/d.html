@@ -1,33 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-<script>
-    const path = window.location.pathname;
-    const fileName = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
-    const studentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
-    document.addEventListener("DOMContentLoaded", () => {
-        document.title = `Quotes from ${studentName}`;
-    });
-</script>
+  <meta charset="utf-8">
+  <title>toma e prost</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    h1 { color: #333; }
-    blockquote { font-style: italic; color: #555; border-left: 4px solid #ccc; padding-left: 1em; }
-    a { color: #007ACC; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid #FF6B6B;
+
+    }
+    body { display:flex; align-items:center; justify-content:center; height:100vh; margin:0; background:#111; }
   </style>
 </head>
 <body>
-<h1>Quotes by <span id="student-name"></span></h1>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("student-name").textContent = studentName;
-    });
-</script>
-  <blockquote>"The only limit to our realization of tomorrow is our doubts of today." – Franklin D. Roosevelt</blockquote>
-  <blockquote>"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</blockquote>
-  <p><a href="../index.html">Back to Students List</a></p>
+  <div class="triangle" aria-hidden="true"></div>
 </body>
 </html>
-sigma boy
