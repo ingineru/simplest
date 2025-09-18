@@ -1,0 +1,28 @@
+.div{
+    background-color: rosybrown;
+    font: 40px Gothic;;
+    font-weight: normal;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    margin: 20px;
+}
+
+body {
+    background-color: rgb(223, 208, 208);
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+blockquote {
+    font-style: italic;
+    color: darkgreen;
+    margin: 20px;
+    padding: 10px;
+    border-left: 5px solid gray;
+}
