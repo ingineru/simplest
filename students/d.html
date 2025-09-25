@@ -1,21 +1,142 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>toma e prost</title>
+  <meta charset="UTF-8" />
+  <title>Chrome Hearts Collection</title>
   <style>
-    .triangle {
-      width: 0;
-      height: 0;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      border-bottom: 100px solid #FF6B6B;
-
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
     }
-    body { display:flex; align-items:center; justify-content:center; height:100vh; margin:0; background:#111; }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .logo {
+      width: 150px;
+      margin: 0 auto 30px;
+      display: block;
+    }
+    table {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #111;
+      box-shadow: 0 0 15px #222;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid #333;
+      text-align: left;
+      vertical-align: middle;
+    }
+    th {
+      background-color: #222;
+      font-weight: 700;
+      font-size: 1.1em;
+    }
+    tr:hover {
+      background-color: #222;
+    }
+    img {
+      width: 130px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #555;
+    }
+    .item-name {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .price {
+      color: #f1c40f;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <div class="triangle" aria-hidden="true"></div>
+  <!-- Chrome Hearts logo (transparent PNG from Wikimedia Commons) -->
+  <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/68/Chrome_Hearts_logo.svg" alt="Chrome Hearts Logo" />
+
+  <h1>Chrome Hearts Collection</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-small-cross-ring-1_600x.jpg" alt="Small Cross Ring" /></td>
+        <td class="item-name">Small Cross Ring</td>
+        <td class="price">$950</td>
+        <td>Handcrafted sterling silver ring with iconic cross design.</td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-charm-cross-necklace_600x.jpg" alt="Charm Cross Necklace" /></td>
+        <td class="item-name">Charm Cross Necklace</td>
+        <td class="price">$1,200</td>
+        <td>Silver necklace with detailed charm cross pendant.</td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-floral-cross-ring_600x.jpg" alt="Floral Cross Ring" /></td>
+        <td class="item-name">Floral Cross Ring</td>
+        <td class="price">$1,100</td>
+        <td>Elegant floral design on sterling silver cross ring.</td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-leather-jacket_600x.jpg" alt="Leather Jacket" /></td>
+        <td class="item-name">Leather Jacket</td>
+        <td class="price">$4,500</td>
+        <td>Premium black leather biker jacket with Chrome Hearts patches.</td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-cross-earrings_600x.jpg" alt="Cross Earrings" /></td>
+        <td class="item-name">Cross Earrings</td>
+        <td class="price">$650</td>
+        <td>Pair of sterling silver cross earrings with intricate details.</td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-wallet_600x.jpg" alt="Leather Wallet" /></td>
+        <td class="item-name">Leather Wallet</td>
+        <td class="price">$800</td>
+        <td>Genuine leather wallet embossed with Chrome Hearts logo.</td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-sunglasses_600x.jpg" alt="Sunglasses" /></td>
+        <td class="item-name">Sunglasses</td>
+        <td class="price">$1,500</td>
+        <td>Signature Chrome Hearts sunglasses with silver detailing.</td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-belt_600x.jpg" alt="Leather Belt" /></td>
+        <td class="item-name">Leather Belt</td>
+        <td class="price">$900</td>
+        <td>Black leather belt with silver Chrome Hearts buckle.</td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-bracelet_600x.jpg" alt="Silver Bracelet" /></td>
+        <td class="item-name">Silver Bracelet</td>
+        <td class="price">$1,300</td>
+        <td>Bold sterling silver bracelet with Gothic motif.</td>
+      </tr>
+      <tr>
+        <td><img src="https://cdn.shopify.com/s/files/1/0205/8625/products/chrome-hearts-cap_600x.jpg" alt="Chrome Hearts Cap" /></td>
+        <td class="item-name">Chrome Hearts Cap</td>
+        <td class="price">$350</td>
+        <td>Black baseball cap with embroidered Chrome Hearts logo.</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
