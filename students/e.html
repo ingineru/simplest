@@ -6,9 +6,9 @@
   <script>
     const path = window.location.pathname;
     const fileName = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
-    const studentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
+    window.studentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
     document.addEventListener("DOMContentLoaded", () => {
-      document.title = `Quotes from ${studentName}`;
+      document.title = `Quotes from ${window.studentName}`;
     });
   </script>
   <style>
@@ -43,43 +43,15 @@
   <h1>Quotes by <span id="student-name"></span></h1>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("student-name").textContent = studentName;
+      document.getElementById("student-name").textContent = window.studentName;
     });
   </script>
-  <blockquote>"The only limit to our realization of tomorrow is our doubts of today." – Franklin D. Roosevelt
-  </blockquote>
-  <blockquote>"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela
-  </blockquote>
-
-  <h2>Anakin quotes</h2>
-  <button onclick="myFunction()">Anakin Quote</button>
-  <script>
-    function myFunction() {
-      const anakinQuotes = [
-        "I don't like sand. It's coarse and rough and irritating and it gets everywhere.",
-        "If you're not with me, then you're my enemy!",
-        "You underestimate my power!",
-        "This is where the fun begins.",
-        "I will be the most powerful Jedi ever.",
-        "From my point of view, the Jedi are evil!",
-        "I see through the lies of the Jedi.",
-        "You turned her against me!",
-        "I have brought peace, freedom, justice, and security to my new empire.",
-        "I'm a person and my name is Anakin!"
-      ];
-      const randomQuote = anakinQuotes[Math.floor(Math.random() * anakinQuotes.length)];
-      alert(randomQuote);
-    }
-  </script>
-  <!-- 
   <img src="https://starwars-visualguide.com/assets/img/characters/11.jpg" alt="Anakin Skywalker"
     style="display:block;max-width:300px;width:100%;margin:1em auto;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.2);" />
   <h2>anakin the goat</h2>
   <blockquote>"If you're not with me, then you're my enemy!" – Anakin Skywalker</blockquote>
   <blockquote>"You were the Chosen One! It was said that you would destroy the Sith, not join them!" – Obi-Wan Kenobi
   </blockquote>
-  <p><a href="../index.html">Back to Students List</a></p> -->
-
   <p><a href="../index.html">Back to Students List</a></p>
 </body>
 
