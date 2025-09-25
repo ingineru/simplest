@@ -76,7 +76,12 @@
             students.forEach(name => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                a.href = `students/${name.toLowerCase()}.html`;
+                // Modificare pentru T: trimite către students/toma/t.html
+                if (name === "T") {
+                    a.href = `students/toma/t.html`;
+                } else {
+                    a.href = `students/${name.toLowerCase()}.html`;
+                }
                 a.textContent = name;
                 li.appendChild(a);
                 ul.appendChild(li);

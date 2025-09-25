@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="stylest.css" />
+  <script>
+    const path = window.location.pathname;
+    const fileName = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'));
+    const studentName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
+    document.addEventListener("DOMContentLoaded", () => {
+      document.title = `Quotes from ${studentName}`;
+      document.getElementById("student-name").textContent = studentName;
+    });
+  </script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    h1 { color: #333; }
+    blockquote { font-style: italic; color: #555; border-left: 4px solid #ccc; padding-left: 1em; }
+    a { color: #007ACC; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  
+  <h1>Quotes by <span id="student-name"></span></h1>
+  <div>
+    <p>This is a styled div element.</p>
+  </div>
+  <blockquote>"The only limit to our realization of tomorrow is our doubts of today." – Franklin D. Roosevelt</blockquote>
+  <blockquote>"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</blockquote>
+<div class="parallax"></div>
+  <div class="chenar-multiselect" style="display: flex; gap: 1.5rem; align-items: flex-start;">
+  <div style="flex:1;">
+    <label for="fruits">Alegeți fructele preferate:</label>
+    <select id="fruits" name="fruits" multiple size="7" style="min-width:120px;">
+      <option value="mere">Mere</option>
+      <option value="pere">Pere</option>
+      <option value="banane">Banane</option>
+      <option value="portocale">Portocale</option>
+      <option value="struguri">Struguri</option>
+      <option value="cirese">Cireșe</option>
+    </select>
+  </div>
+  <div style="flex:2; display:flex; flex-direction:column; gap:0.5rem;">
+    <textarea id="fruit-copypasta" readonly style="min-height:120px; width:100%; resize:vertical; background:#fff; border:1px solid #bfc9d1; border-radius:6px; padding:0.7rem; font-size:1rem;" placeholder="Aici apare copypasta cu fructe..."></textarea>
+    <button id="copy-copypasta-btn" type="button" style="align-self:flex-end; padding:0.5rem 1.2rem; font-size:1rem;">Copy</button>
+  </div>
+</div>
+<div class="parallax"></div>
+<!-- Înlocuiește butonul Back to Students List cu un link stilizat -->
+<a href="../../index.html" class="btn" style="margin-top:2rem; text-align:center; width:max-content; align-self:center;">Back to Students List</a>
+  <button id="disco-btn" type="button" style="margin-top:2rem;">Disco!</button>
+  <script>
+    // Disco button script
+    let discoInterval = null;
+    const discoColors = [
+      "#ff0080", "#7928ca", "#00f2fe", "#f7971e", "#ffd200",
+      "#21d4fd", "#b721ff", "#ff6a00", "#43e97b", "#38f9d7"
+    ];
+    document.getElementById('disco-btn').onclick = function() {
+      if (discoInterval) {
+        clearInterval(discoInterval);
+        discoInterval = null;
+        document.body.style.background = "";
+        this.textContent = "Disco!";
+        return;
+      }
+      this.textContent = "Stop Disco";
+      discoInterval = setInterval(() => {
+        const color1 = discoColors[Math.floor(Math.random() * discoColors.length)];
+        const color2 = discoColors[Math.floor(Math.random() * discoColors.length)];
+        document.body.style.background = `linear-gradient(120deg, ${color1}, ${color2})`;
+      }, 150);
+    };
+
+    // Fruit copypasta logic
+    const fruitCopypastaMap = {
+      "mere": "🍎🍏 Mere: Cea mai crocantă alegere!",
+      "pere": "🍐 Pere: Dulci și suculente, perfecte pentru orice zi.",
+      "banane": "🍌 Banane: Energie instantanee, gust tropical!",
+      "portocale": "🍊 Portocale: Vitamina C la putere maximă!",
+      "struguri": "🍇 Struguri: Mici, dulci și delicioși.",
+      "cirese": "🍒 Cireșe: Vara nu e vară fără ele!"
+    };
+
+    const fruitsSelect = document.getElementById('fruits');
+    const copypastaBox = document.getElementById('fruit-copypasta');
+    const copyBtn = document.getElementById('copy-copypasta-btn');
+
+    fruitsSelect.addEventListener('change', function() {
+      const selected = Array.from(this.selectedOptions).map(opt => opt.value);
+      const copypasta = selected.map(fruit => fruitCopypastaMap[fruit] || "").join('\n\n');
+      copypastaBox.value = copypasta;
+    });
+
+    copyBtn.addEventListener('click', function() {
+      copypastaBox.select();
+      copypastaBox.setSelectionRange(0, 99999); // For mobile devices
+      document.execCommand('copy');
+      copyBtn.textContent = "Copiat!";
+      setTimeout(() => { copyBtn.textContent = "Copy"; }, 1200);
+    });
+  </script>
+</div>
+</body>
+</html>
