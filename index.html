@@ -71,12 +71,17 @@
         <h1>THE Group</h1>
         <ul id="student-list"></ul>
         <script>
+            // Script for E, accessing from edis folder
             const students = ["F", "D", "E", "T", "S"];
             const ul = document.getElementById('student-list');
             students.forEach(name => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
-                a.href = `students/${name.toLowerCase()}.html`;
+                if (name === "E") {
+                    a.href = `students/edis folder/${name.toLowerCase()}.html`;
+                } else {
+                    a.href = `students/${name.toLowerCase()}.html`;
+                }
                 a.textContent = name;
                 li.appendChild(a);
                 ul.appendChild(li);
