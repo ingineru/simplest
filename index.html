@@ -77,6 +77,9 @@
             students.forEach(name => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
+                if (name === "T") {
+                    a.href = `students/toma/t.html`;
+                }
                 if (name === "E") {
                     a.href = `students/edis folder/${name.toLowerCase()}.html`;
                 } else {
