@@ -94,6 +94,27 @@
             });
         </script>
     </div>
+    <div class="container">
+        <h1>Other Links</h1>
+        <ul id="others"></ul>
+        <script>
+            const others = ["react"];
+            const uo = document.getElementById('others');
+            others.forEach(other => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                if (other === "react") {
+                    a.href = `others/react.html`;
+                }
+                else {
+                    a.href = `index.html`;
+                }
+                a.textContent = other;
+                li.appendChild(a);
+                uo.appendChild(li);
+            });
+        </script>
+    </div>
 </body>
 
 </html>
