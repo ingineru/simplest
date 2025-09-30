@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API Driven CRUD Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .buttons>button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>API Driven CRUD</h1>
+
+    <input type="text" id="itemInput" placeholder="Add or edit an item" />
+    <button id="addBtn">Add</button>
+
+    <ul id="itemsList"></ul>
+
+    <script src="api.js"></script>
+
+</body>
+
+</html>
