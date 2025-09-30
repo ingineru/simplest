@@ -80,10 +80,10 @@
                 if (name === "T") {
                     a.href = `students/toma/t.html`;
                 }
-                if (name === "F") {
-                    a.href = `students/aux/f.html`;
+                else if (name === "F") {
+                    a.href = `students/aux/${name.toLowerCase()}.html`;
                 }
-                if (name === "E") {
+                else if (name === "E") {
                     a.href = `students/edis folder/${name.toLowerCase()}.html`;
                 } else {
                     a.href = `students/${name.toLowerCase()}.html`;
