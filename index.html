@@ -98,7 +98,7 @@
         <h1>Other Links</h1>
         <ul id="others"></ul>
         <script>
-            const others = ["react"];
+            const others = ["react", "crud"];
             const uo = document.getElementById('others');
             others.forEach(other => {
                 const li = document.createElement('li');
@@ -106,8 +106,11 @@
                 if (other === "react") {
                     a.href = `others/react.html`;
                 }
+                else if (other === "crud") {
+                    a.href = `others/crud.html`;
+                }
                 else {
-                    a.href = `index.html`;
+                    a.href = `404.html`;
                 }
                 a.textContent = other;
                 li.appendChild(a);
