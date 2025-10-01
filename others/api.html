@@ -3,51 +3,53 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>API Driven CRUD Page</title>
+    <title>Mock API Fruit Test</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: auto;
-            padding: 30px;
+            margin: 20px;
         }
 
         input,
         button {
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        pre {
+            background: #eee;
             padding: 10px;
-            font-size: 1rem;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .buttons>button {
-            margin-left: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
+    <h1>Mock API Fruit List</h1>
 
-    <h1>API Driven CRUD</h1>
+    <button onclick="getAll()">Get All Fruits</button><br />
+    <pre id="output"></pre>
 
-    <input type="text" id="itemInput" placeholder="Add or edit an item" />
-    <button id="addBtn">Add</button>
+    <h2>Get Fruit by ID</h2>
+    <input type="number" id="getId" placeholder="Enter ID" />
+    <button onclick="getById()">Get Fruit</button>
 
-    <ul id="itemsList"></ul>
+    <h2>Add Fruit</h2>
+    <input type="text" id="addName" placeholder="Enter fruit name" />
+    <button onclick="addFruit()">Add Fruit</button>
 
-    <script src="api.js"></script>
+    <h2>Update Fruit</h2>
+    <input type="number" id="updateId" placeholder="Enter ID" />
+    <input type="text" id="updateName" placeholder="New name" />
+    <button onclick="updateFruit()">Update Fruit</button>
 
+    <h2>Delete Fruit</h2>
+    <input type="number" id="deleteId" placeholder="Enter ID" />
+    <button onclick="deleteFruit()">Delete Fruit</button>
+
+    <script type="module" src="./mockApi.js"></script>
 </body>
 
 </html>
