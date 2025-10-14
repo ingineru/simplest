@@ -1,4 +1,4 @@
-name: Check Broken Links
+name: Broken Link Check with Python Server and Muffet
 
 on:
   push:
@@ -9,11 +9,11 @@ on:
       - main
 
 jobs:
-  broken-link-check:
+  check-broken-links:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Install Muffet
         run: |
           # apt-get update && apt-get install -y curl
@@ -21,7 +21,11 @@ jobs:
           tar -xzf muffet.tar.gz
           sudo mv muffet /usr/local/bin/
 
-      - name: Run muffet on local files
+      - name: Start Python HTTP Server and Run Muffet
         run: |
-          # Run muffet checking all HTML files in the repo recursively
-          muffet ./index.html
+          # Start python HTTP server in the background at port 8000
+          python3 -m http.server 8000 &
+          sleep 5
+          
+          # Run muffet against the local server URL
+          muffet http://localhost:8000/index.html
