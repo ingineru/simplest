@@ -1,0 +1,26 @@
+name: Check Broken Links
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  broken-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Muffet
+        run: |
+          curl -L https://github.com/raviqqe/muffet/releases/latest/download/muffet_0.10.10_Linux_x86_64.tar.gz -o muffet.tar.gz
+          tar -xzf muffet.tar.gz
+          sudo mv muffet /usr/local/bin/
+
+      - name: Run muffet on local files
+        run: |
+          # Run muffet checking all HTML files in the repo recursively
+          muffet ./index.html
