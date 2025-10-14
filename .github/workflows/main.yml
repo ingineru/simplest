@@ -16,7 +16,8 @@ jobs:
       
       - name: Install Muffet
         run: |
-          curl -L https://github.com/raviqqe/muffet/releases/latest/download/muffet_0.10.10_Linux_x86_64.tar.gz -o muffet.tar.gz
+          # apt-get update && apt-get install -y curl
+          curl -L https://github.com/raviqqe/muffet/releases/download/v2.11.0/muffet_linux_amd64.tar.gz -o muffet.tar.gz
           tar -xzf muffet.tar.gz
           sudo mv muffet /usr/local/bin/
 
