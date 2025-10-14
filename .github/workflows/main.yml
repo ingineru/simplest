@@ -29,3 +29,20 @@ jobs:
           
           # Run muffet against the local server URL
           muffet http://localhost:8000/index.html
+          if [ $? -ne 0 ]; then
+            echo "Broken link(s) found"
+            exit 1
+          fi
+          echo "No broken links found"
+
+      - name: Stop Python HTTP Server
+        run: |
+          killall python3
+          echo "Python HTTP server stopped"
+
+      - name: Cleanup
+        run: |
+          rm -rf muffet.tar.gz
+          rm -rf muffet
+          echo "Cleanup completed"
+ 
