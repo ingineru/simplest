@@ -1,4 +1,4 @@
-name: Broken Link Check with Python Server and Muffet
+name: Broken Link Check - Dynamic Filenames Support
 
 on:
   push:
@@ -14,26 +14,26 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Muffet
+      - name: Install muffet
         run: |
           # apt-get update && apt-get install -y curl
           curl -L https://github.com/raviqqe/muffet/releases/download/v2.11.0/muffet_linux_amd64.tar.gz -o muffet.tar.gz
           tar -xzf muffet.tar.gz
           sudo mv muffet /usr/local/bin/
 
-      - name: Start Python HTTP Server and Run Muffet
+      - name: Start Python HTTP server in background
         run: |
-          # Start python HTTP server in the background at port 8000
           python3 -m http.server 8000 &
           sleep 5
-          
-          # Run muffet against the local server URL
-          muffet http://localhost:8000/index.html
-          if [ $? -ne 0 ]; then
-            echo "Broken link(s) found"
-            exit 1
-          fi
-          echo "No broken links found"
+
+      - name: Generate all URLs list from actual files
+        run: |
+          base_url="http://localhost:8000/"
+          find ./students -type f -name '*.html' | sed "s|^\./|$base_url|" > all-urls.txt
+
+      - name: Check all links with muffet
+        run: |
+          cat all-urls.txt | xargs -n 1 muffet
 
       - name: Stop Python HTTP Server
         run: |
