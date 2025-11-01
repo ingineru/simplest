@@ -26,7 +26,6 @@ jobs:
 
       - name: Start Python HTTP server in background
         continue-on-error: false
-        requires: muffet
         run: |
           python3 -m http.server 8000 &
           echo $! > server.pid
@@ -34,14 +33,12 @@ jobs:
 
       - name: Generate all URLs list from actual files
         continue-on-error: false
-        requires: muffet, python
         run: |
           base_url="http://localhost:8000/"
           find ./students -type f -name '*.html' | sed "s|^\./|$base_url|" > all-urls.txt
 
       - name: Check all links with muffet
         continue-on-error: true
-        requires: muffet, python
         run: |
           cat all-urls.txt | xargs -n 1 muffet
 
