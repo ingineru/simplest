@@ -38,7 +38,7 @@ jobs:
           find ./students -type f -name '*.html' | sed "s|^\./|$base_url|" > all-urls.txt
 
       - name: Check all links with muffet
-        id:check-linkks
+        id: check-links
         continue-on-error: true
         run: |
           cat all-urls.txt | xargs -n 1 muffet
