@@ -38,9 +38,16 @@ jobs:
           find ./students -type f -name '*.html' | sed "s|^\./|$base_url|" > all-urls.txt
 
       - name: Check all links with muffet
+        id:check-linkks
         continue-on-error: true
         run: |
           cat all-urls.txt | xargs -n 1 muffet
+
+      - name: Check links result
+        if: steps.check-links.outcome != 'success'
+        run: |
+          echo "Links checker failed — marking the whole job as failed"
+          exit 1
 
       - name: Stop Python HTTP Server
         continue-on-error: true
