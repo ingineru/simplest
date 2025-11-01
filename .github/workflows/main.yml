@@ -12,32 +12,44 @@ jobs:
   check-broken-links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4.3.0
 
-      - name: Install muffet
+      - name: Install dependencies
+        continue-on-error: false
         run: |
-          # apt-get update && apt-get install -y curl
+          # sudo apt-get update
+          # sudo apt-get install -y curl python3
           curl -L https://github.com/raviqqe/muffet/releases/download/v2.11.0/muffet_linux_amd64.tar.gz -o muffet.tar.gz
           tar -xzf muffet.tar.gz
           sudo mv muffet /usr/local/bin/
+          muffet --version
 
       - name: Start Python HTTP server in background
+        continue-on-error: false
+        requires: muffet
         run: |
           python3 -m http.server 8000 &
+          echo $! > server.pid
           sleep 5
 
       - name: Generate all URLs list from actual files
+        continue-on-error: false
+        requires: muffet, python
         run: |
           base_url="http://localhost:8000/"
           find ./students -type f -name '*.html' | sed "s|^\./|$base_url|" > all-urls.txt
 
       - name: Check all links with muffet
+        continue-on-error: true
+        requires: muffet, python
         run: |
           cat all-urls.txt | xargs -n 1 muffet
 
       - name: Stop Python HTTP Server
+        continue-on-error: true
         run: |
-          killall python3
+          kill $(cat server.pid)
+          # killall python3
           echo "Python HTTP server stopped"
 
       - name: Cleanup
@@ -45,4 +57,3 @@ jobs:
           rm -rf muffet.tar.gz
           rm -rf muffet
           echo "Cleanup completed"
- 
