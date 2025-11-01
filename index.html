@@ -80,10 +80,10 @@
                 if (name === "T") {
                     a.href = `students/toma/t.html`;
                 }
-                if (name === "F") {
-                    a.href = `students/aux/f.html`;
+                else if (name === "F") {
+                    a.href = `students/aux/${name.toLowerCase()}.html`;
                 }
-                if (name === "E") {
+                else if (name === "E") {
                     a.href = `students/edis folder/${name.toLowerCase()}.html`;
                 } else {
                     a.href = `students/${name.toLowerCase()}.html`;
@@ -91,6 +91,22 @@
                 a.textContent = name;
                 li.appendChild(a);
                 ul.appendChild(li);
+            });
+        </script>
+    </div>
+    <div class="container">
+        <h1>Other Links</h1>
+        <ul id="others"></ul>
+        <script>
+            const others = ["react", "crud", "api"];
+            const uo = document.getElementById('others');
+            others.forEach(other => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `others/${other}.html`;
+                a.textContent = other;
+                li.appendChild(a);
+                uo.appendChild(li);
             });
         </script>
     </div>

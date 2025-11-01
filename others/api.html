@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mock API Fruit Test</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input,
+        button {
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mock API Fruit List</h1>
+
+    <button onclick="getAll()">Get All Fruits</button><br />
+    <pre id="output"></pre>
+
+    <h2>Get Fruit by ID</h2>
+    <input type="number" id="getId" placeholder="Enter ID" />
+    <button onclick="getById()">Get Fruit</button>
+
+    <h2>Add Fruit</h2>
+    <input type="text" id="addName" placeholder="Enter fruit name" />
+    <button onclick="addFruit()">Add Fruit</button>
+
+    <h2>Update Fruit</h2>
+    <input type="number" id="updateId" placeholder="Enter ID" />
+    <input type="text" id="updateName" placeholder="New name" />
+    <button onclick="updateFruit()">Update Fruit</button>
+
+    <h2>Delete Fruit</h2>
+    <input type="number" id="deleteId" placeholder="Enter ID" />
+    <button onclick="deleteFruit()">Delete Fruit</button>
+
+    <script type="module" src="./mockApi.js"></script>
+</body>
+
+</html>
