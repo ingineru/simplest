@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proiect - Pluvial Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <header class="scrolled no-scroll">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html"><img src="assets/img/logo.jpg" alt="Pluvial Expert Logo"></a>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" data-i18n="nav_home">Acasă</a></li>
+                    <li><a href="index.html#about" data-i18n="nav_about">Despre Noi</a></li>
+                    <li><a href="index.html#services" data-i18n="nav_products">Produse și Servicii</a></li>
+                    <li><a href="index.html#projects" data-i18n="nav_projects">Proiecte</a></li>
+                    <li><a href="index.html#articles" data-i18n="nav_articles">Articole</a></li>
+                    <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+                    <li><a href="estimate.html" class="btn btn-primary" data-i18n="nav_estimate"
+                            style="padding: 8px 20px;">Estimare Cost</a></li>
+                    <li class="lang-switcher">
+                        <select id="lang-select">
+                            <option value="ro">RO</option>
+                            <option value="en">EN</option>
+                            <option value="es">ES</option>
+                            <option value="it">IT</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-padding" style="padding-top: 120px;">
+        <div class="container">
+            <h1 class="mb-40" data-i18n="project_3_title">Complex Comercial</h1>
+            <div class="contact-grid">
+                <div class="project-image">
+                    <img src="assets/img/project-3.jpg" alt="Project Image"
+                        style="width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+                <div class="project-info">
+                    <h3 data-i18n="project_details_title">Detalii Proiect</h3>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><strong data-i18n="project_location_label">Locație:</strong>
+                            <span data-i18n="project_3_location">Cluj-Napoca</span>
+                        </li>
+                        <li style="margin-bottom: 10px;"><strong data-i18n="project_year_label">An:</strong> <span
+                                data-i18n="project_3_year">2022</span></li>
+                        <li style="margin-bottom: 10px;"><strong data-i18n="project_material_label">Material:</strong>
+                            <span data-i18n="project_3_material">Oțel</span>
+                        </li>
+                    </ul>
+                    <h3 data-i18n="project_desc_title">Descriere</h3>
+                    <p data-i18n="project_3_full_desc">Un proiect de anvergură pentru un complex comercial. Am instalat
+                        un sistem industrial capabil să gestioneze volume mari de apă pluvială, folosind materiale
+                        rezistente la coroziune și trafic intens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pluvial Expert. <span data-i18n="footer_rights">Toate drepturile rezervate.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/lang.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

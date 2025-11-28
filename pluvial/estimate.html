@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimare Cost - Pluvial Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .calculator-section {
+            padding-top: 120px;
+            min-height: 80vh;
+        }
+
+        .calculator-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .result-box {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            text-align: center;
+            display: none;
+        }
+
+        .result-box h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .result-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="scrolled no-scroll">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/img/logo.jpg" alt="Pluvial Expert Logo">
+                    </a>
+                </div>
+
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home" data-i18n="nav_home">Acasă</a></li>
+                    <li><a href="index.html#about" data-i18n="nav_about">Despre Noi</a></li>
+                    <li><a href="index.html#services" data-i18n="nav_products">Produse și Servicii</a></li>
+                    <li><a href="index.html#projects" data-i18n="nav_projects">Proiecte</a></li>
+                    <li><a href="index.html#articles" data-i18n="nav_articles">Articole</a></li>
+                    <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+                    <li><a href="estimate.html" class="btn btn-primary" data-i18n="nav_estimate"
+                            style="padding: 8px 20px;">Estimare Cost</a></li>
+                    <li class="lang-switcher">
+                        <select id="lang-select">
+                            <option value="ro">RO</option>
+                            <option value="en">EN</option>
+                            <option value="es">ES</option>
+                            <option value="it">IT</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-card">
+                <h2 class="text-center mb-40" data-i18n="estimate_title">Estimare Cost Sistem Pluvial</h2>
+
+                <form id="cost-estimator">
+                    <div class="form-group">
+                        <label for="roof-type" data-i18n="roof_type_label">Tip Acoperiș</label>
+                        <select id="roof-type">
+                            <option value="1" data-i18n="roof_2_slopes">2 Ape (Simplu)</option>
+                            <option value="1.2" data-i18n="roof_4_slopes">4 Ape (Complex)</option>
+                            <option value="1.5" data-i18n="roof_multi">Multivolum (Foarte Complex)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gutters" data-i18n="gutters_label">Lungime Jgheaburi (metri)</label>
+                        <input type="number" id="gutters" min="0" placeholder="ex: 20">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="downspouts" data-i18n="downspouts_label">Lungime Burlane (metri)</label>
+                        <input type="number" id="downspouts" min="0" placeholder="ex: 10">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="material" data-i18n="material_label">Material</label>
+                        <select id="material">
+                            <option value="50" data-i18n="mat_zinc">Tablă Zincată (Standard)</option>
+                            <option value="80" data-i18n="mat_alum">Aluminiu (Premium)</option>
+                            <option value="120" data-i18n="mat_copper">Cupru (Exclusiv)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;"
+                        data-i18n="calculate_btn">Calculează Estimare</button>
+                </form>
+
+                <div id="result-box" class="result-box">
+                    <h3 data-i18n="cost_result_title">Cost Estimat:</h3>
+                    <div class="result-price" id="estimated-price">0 RON</div>
+                    <p class="disclaimer" data-i18n="cost_disclaimer">*Aceasta este o estimare strict informativă.
+                        Prețul final poate varia în
+                        funcție de complexitatea montajului și accesorii suplimentare.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pluvial Expert. <span data-i18n="footer_rights">Toate drepturile rezervate.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/lang.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+</body>
+
+</html>
